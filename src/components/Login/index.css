@@ -1,8 +1,8 @@
 .App {
-    --primary-color: #52d1d1;
+    --primary-color: #cfcbd3;
     --app-height: 800px;
-    --blur-color-light: rgb(116, 219, 219);
-    --blur-color-dark: #585e5e;
+    --blur-color-light: #dbd7df;
+    --blur-color-dark: #b2aeb6;
 }
 
 .App {
@@ -15,9 +15,7 @@
 
 .App-login-board {
     --content-width: 240px;
-}
-
-.App-login-board {
+    --content-height: 40px;
     --title-height: 20%;
     --x-index: 3px;
     --y-index: calc(-1*var(--x-index));
@@ -63,15 +61,20 @@
     box-sizing: border-box;
     display: block;
     width: var(--content-width);
-    height: 40px;
+    height: var(--content-height);
     border: none;
     background-color: var(--primary-color);
     border-radius: 20px;
     padding: 0 20px 0 20px;
     font-size: 16px;
-    box-shadow: inset var(--y-index) var(--y-index) var(--blur) var(--spread) var(--blur-color-light), inset var(--x-index) var(--x-index) var(--blur) var(--spread) var(--blur-color-dark);
+    border: 1px dashed var(--blur-color-dark);
     outline: none;
     margin-bottom: 20px;
+}
+
+.App-login-input>input:focus {
+    border: none;
+    box-shadow: inset var(--y-index) var(--y-index) var(--blur) var(--spread) var(--blur-color-light), inset var(--x-index) var(--x-index) var(--blur) var(--spread) var(--blur-color-dark);
 }
 
 .App-login-button {
@@ -81,12 +84,13 @@
     --spread: 2px;
     background-color: var(--primary-color);
     width: var(--content-width);
-    height: 40px;
+    height: var(--content-height);
     border-radius: 20px;
     border: none;
     box-shadow: var(--y-index) var(--y-index) var(--blur) var(--spread) var(--blur-color-light), var(--x-index) var(--x-index) var(--blur) var(--spread) var(--blur-color-dark);
 }
 
 .App-login-button:active {
-    box-shadow: var(--y-index) var(--y-index) var(--blur) 0 var(--blur-color-light), var(--x-index) var(--x-index) var(--blur) 0 var(--blur-color-dark);
+    border: 1px solid var(--blur-color-dark);
+    box-shadow: none;
 }
