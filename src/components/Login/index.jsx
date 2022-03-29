@@ -12,7 +12,7 @@ export default function Login() {
         } else {
             setActicityState('login')
         }
-        message.success("activity state change")
+        message.success("activity state change",1)
     }
 
     return (
@@ -30,6 +30,12 @@ export default function Login() {
                         <span>PASSWORD</span>
                         <input type="text" placeholder='enter password here' />
                     </div>
+                    {ActicityState==='login'?null:
+                        <div className='App-login-input'>
+                         <span>ENSUREPASSWORD</span>
+                         <input type="text" placeholder='enter password again' />
+                        </div>
+                    }
                     <button className='App-login-button'>{ActicityState === 'login' ? 'login' : 'register'}</button>
                 </div>
             </div>
